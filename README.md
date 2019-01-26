@@ -8,6 +8,7 @@
 - react-router-dom
 - styled-components
 - prop-types
+- react-paypal-express-checkout
 
 - iconfinder : https://www.iconfinder.com/
 

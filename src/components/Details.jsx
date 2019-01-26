@@ -9,7 +9,6 @@ export default class Details extends Component {
       <ProductConsumer>
         {({ detailProduct, addToCart, openModal }) => {
           const { id, title, img, info, price, company, inCart } = detailProduct
-          console.log(detailProduct)
           return (
             <div className="container py-5">
               <div className="row">

@@ -2,8 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { ProductConsumer } from '../../context'
+import PayPalButton from './PayPalButton'
 
-export default function CartSummary() {
+export default function CartSummary({ history }) {
   return (
     <ProductConsumer>
       {({ cartSubTotal, cartTax, cartTotal, clearCart }) => (
@@ -21,22 +22,27 @@ export default function CartSummary() {
                 </Link>
                 <h5>
                   <span className="text-title">
-                    subtotal: 
+                    subtotal:
                   </span>
                   <strong>$ {cartSubTotal}</strong>
                 </h5>
                 <h5>
                   <span className="text-title">
-                    tax: 
+                    tax:
                   </span>
                   <strong>$ {cartTax}</strong>
                 </h5>
                 <h5>
                   <span className="text-title">
-                    total: 
+                    total:
                   </span>
                   <strong>$ {cartTotal}</strong>
                 </h5>
+                <PayPalButton
+                  total={cartTotal}
+                  clearCart={clearCart}
+                  history={history}
+                />
               </div>
             </div>
           </div>
